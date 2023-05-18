@@ -222,18 +222,18 @@
 
         // 모터 상태 표시
         var motorStatusElement = document.getElementById('motor_status');
-        motorStatusElement.textContent = data.motor_working ? '작동 중' : '정지';
+        motorStatusElement.textContent = (data.motor_working == 1) ? '작동 중' : '정지';
 
         var motorCircle = document.getElementById('circle_motor');
-        motorCircle.style.backgroundColor = data.motor_working ? 'blue' : 'red'
+        motorCircle.style.backgroundColor = (data.motor_working == 1) ? 'blue' : 'red'
        
 
         // 시스템 오작동 표시
         var systemStatusElement = document.getElementById('system_status');
-        systemStatusElement.textContent = data.system_warning ? '오작동' : '정상';
+        systemStatusElement.textContent = (data.system_warning == 1) ? '오작동' : '정상';
 
         var systemCircle = document.getElementById('circle_system');
-        systemCircle.style.backgroundColor = data.system_warning ? 'red' : 'blue'
+        systemCircle.style.backgroundColor = (data.system_warning == 1) ? 'red' : 'blue'
 
     }
 
